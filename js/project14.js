@@ -27,11 +27,36 @@ $(function () {
 
 
         //console.log(event, event.target, event.currentTarget, $(this), $(this).index());
+    });
 
-        // history tab 메뉴
+
+    $('.issue_slider').slick({
+        fade: true,
+        arrows: false,
+    });
+
+    $('.main_issue').on('init afterChange', function (e, s, c) {
+        const current = $('.main_slide .slick-current');
+        current.addClass('on').siblings().removeClass('on');
+
+        //슬라이드 숫자 표시(1/3)
+        $('.main_issue .slide_num span').text(c ? (c + 1) : 1);
+        $('.main_issue .slide_num strong').text(s.slideCount);
+
+        console.log(s.slideCount);
 
     });
 
+    $('.main_issue .issue_btn .left').on('click', function () {
+        $('.issue_slider').slick('slickPrev');
+        // console.log('000')
+    });
+    $('.main_issue .issue_btn .right').on('click', function () {
+        $('.issue_slider').slick('slickNext')
+    });
+
+
+    // history tab 메뉴
     $('.eventMenu li').on('click', function (event) {
         event.preventDefault();
         let idx = $(this).index();
