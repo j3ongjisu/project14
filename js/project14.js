@@ -1,4 +1,20 @@
 $(function () {
+
+    //모바일 탭 버튼
+    $('.mobile_btn').on('click', function () {
+        $(this).toggleClass('on');
+        $('.gnb').toggleClass('on');
+    });
+
+    $('.gnb>ul>li>a').on('click', function (e) {
+        if ($('.gnb').hasClass('on')) {
+            e.preventDefault();
+        }
+
+        $(this).next().stop().slideDown();
+        $(this).parent().siblings().find('.sub_menu').stop().slideUp();
+    });
+
     // 탭 메뉴
     $('.tab_box>ul>li').on('click', function (e) {
         e.preventDefault();
@@ -63,4 +79,23 @@ $(function () {
         console.log(idx)
         $('.eventContent li').eq(idx).addClass('on').siblings().removeClass('on');
     });
-})
+
+    $('.family_link span').on('click', function () {
+        $(this).toggleClass('on');
+        $(this).next().toggleClass('on');
+    });
+
+
+    //to_top
+    //to_top 스크롤 위로 올리기
+    $('.to_top').on('click', function () {
+        $('html, body').animate({ scrollTop: 0 }, 600)
+    });
+
+    // to_top 스크롤 숨겼다가 나타내기
+    $(window).on('scroll', function () {
+        let sct = $(window).scrollTop();
+        // sct > 1000 ? $('.to_top').fadeIn(1000) : $('.to_top').fadeOut();
+        sct > 400 ? $('.to_top').addClass('on') : $('.to_top').removeClass('on');
+    });
+});
