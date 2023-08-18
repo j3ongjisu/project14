@@ -1044,6 +1044,12 @@
     /*header*/
 
     .header {
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: #fff;
         border-bottom: 1px solid #ddd;
     }
 
@@ -1129,7 +1135,7 @@
     }
 
     .header .sub {
-        position: absolute;
+        /* position: absolute;
         width: 100%;
         height: 0;
         top: 75px;
@@ -1140,9 +1146,26 @@
         overflow: hidden;
         transition: 0.5s;
         z-index: 999;
-        border-right: 1px solid #ddd;
+        border-right: 1px solid #ddd; */
 
         display: none;
+        /**/
+        position: static;
+        width: 100%;
+        height: auto;
+        top: 130px;
+        left: 50%;
+        transform: translate(0, 0);
+        background: #ffffff;
+        text-align: center;
+        padding: 0 0;
+        border-radius: 5px;
+        border: 0;
+        opacity: 1;
+        visibility: visible;
+        transition: none;
+        display: none;
+
     }
 
 
@@ -1159,7 +1182,7 @@
 
     /* header01에서 hover 위치 조정으로 다단 메뉴 전체 나오게 하기 */
     .header .gnb:hover>ul>li .sub {
-        height: 400px;
+        height: auto;
     }
 
     .header .gnb {
