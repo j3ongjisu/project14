@@ -73,7 +73,7 @@
 .header .gnb .menu_box .main_menu::after {
     content: "";
     position: absolute;
-    bottom: 0;
+    bottom: 5px;
     left: 50%;
     transform: translate(-50%, 0);
     width: 0;
@@ -102,7 +102,11 @@
     overflow: hidden;
     transition: 0.5s;
     z-index: 999;
+}
+
+.header .line {
     border-right: 1px solid #ddd;
+
 }
 
 
@@ -1011,12 +1015,14 @@
 
     /*top_bar*/
     .top_bar {
-        border-top: 1px solid #eee;
-        border-bottom: 1px solid #eee;
+        border-top: 0px solid #eee;
+        border-bottom: 0px solid #eee;
     }
 
     .top_bar h1 {
+        position: fixed;
         margin: 0;
+        z-index: 1003;
     }
 
     .top_bar img {
@@ -1036,6 +1042,7 @@
 
 
     /*header*/
+
     .header {
         border-bottom: 1px solid #ddd;
     }
@@ -1048,30 +1055,53 @@
     .header .gnb_wrap {
         display: flex;
         justify-content: center;
-        height: 60px;
-        line-height: 60px;
+        height: 100px;
+        line-height: 100px;
+        /* - */
+        align-items: center;
+        transition: 0.5s;
+    }
 
-        display: none;
+    .header.on .gnb_wrap {
+        height: 100%;
+
     }
 
     .header .gnb {
         display: flex;
+        /* - */
+        position: fixed;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        transition: 0.5s;
+        z-index: 1001;
+    }
+
+    .header .gnb.on {
+        inset: 0 auto 0 0;
     }
 
     .header .gnb .menu_box {
         display: flex;
         flex-direction: column;
+        background: #fff;
+        gap: 0;
+        padding: 100px 30px 100% 30px;
     }
 
     .header .gnb .menu_box .main_menu {
         position: relative;
         width: 282px;
         /* padding: 0 60px; */
-        font-size: 19px;
+        font-size: 18px;
         font-weight: 600;
-        text-align: center;
-        color: #333;
+        text-align: start;
+        color: #444;
         cursor: pointer;
+
+        line-height: 75px;
+        border-bottom: 1px solid #ddd;
     }
 
     .header .gnb .menu_box .main_menu::after {
@@ -1083,15 +1113,19 @@
         width: 0;
         height: 2px;
         background: #2264bb;
+
+        display: none;
     }
 
     .header .gnb .menu_box .main_menu:hover::after {
         width: 30%;
         transition: 0.5s;
+
+        display: none;
     }
 
     .header .gnb .menu_box .main_menu a {
-        padding: 18px 85px;
+        padding: 0;
     }
 
     .header .sub {
@@ -1107,6 +1141,8 @@
         transition: 0.5s;
         z-index: 999;
         border-right: 1px solid #ddd;
+
+        display: none;
     }
 
 
@@ -1135,12 +1171,13 @@
         position: absolute;
         top: 168px;
         left: 0;
-        width: 100%;
+        width: 0;
         height: 0px;
         background: #fff;
         z-index: 999;
 
         transition: 0.5s;
+        display: none;
     }
 
     .header .gnb:hover::before {
@@ -1156,6 +1193,7 @@
         height: 30px;
         background: none;
         border-radius: 5px;
+        z-index: 1002;
     }
 
     .mobile_btn::before,
