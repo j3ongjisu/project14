@@ -12,11 +12,11 @@ $(function () {
         }
 
         $(this).next().stop().slideDown();
-        $(this).parent().siblings().find('.sub_menu').stop().slideUp();
+        $(this).parent().siblings().find('.sub').stop().slideUp();
     });
 
     // 탭 메뉴
-    $('.tab_box>ul>li').on('click', function (e) {
+    $('.tab_box>ul>li').on('mouseenter', function (e) {
         e.preventDefault();
         let idx = $(this).index();
         $('.tab_bg .itm_box .itm').eq(idx).addClass('on').siblings().removeClass('on')

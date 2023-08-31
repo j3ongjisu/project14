@@ -73,7 +73,7 @@
 .header .gnb .menu_box .main_menu::after {
     content: "";
     position: absolute;
-    bottom: 5px;
+    bottom: -1px;
     left: 50%;
     transform: translate(-50%, 0);
     width: 0;
@@ -106,7 +106,6 @@
 
 .header .line {
     border-right: 1px solid #ddd;
-
 }
 
 
@@ -133,7 +132,7 @@
 .header .gnb::before {
     content: "";
     position: absolute;
-    top: 163px;
+    top: 168px;
     left: 0;
     width: 100%;
     height: 0px;
@@ -299,83 +298,6 @@
     background: rgba(4, 191, 173, 1);
 }
 
-/*main_search*/
-
-
-.main_search {
-    padding: 100px 0;
-}
-
-.main_search {}
-
-.main_search .search_wrap .search_tit h2 {
-    margin: 0 0 32px 0;
-    font-size: 40px;
-    font-weight: 700;
-    text-align: center;
-}
-
-.main_search .search_wrap fieldset {
-    min-width: 0;
-    padding: 0;
-    margin: 0;
-    border: 0;
-}
-
-.main_search .search_wrap fieldset .search_top {
-    background: #eff2f7;
-    border: 1px solid #b1b5b9;
-    border-bottom: 1px solid black;
-    padding: 50px;
-    border-radius: 10px 10px 0 0;
-}
-
-.main_search .search_wrap fieldset .search_top .in {
-    position: relative;
-    border-radius: 100px;
-    overflow: hidden;
-    border: 1px solid #b1b5b9;
-}
-
-.main_search .search_wrap fieldset .search_top .in input {
-    padding: 5px 2rem;
-    width: 100%;
-    height: 50px;
-    background: #fff;
-    border: 0;
-    border-radius: 100px;
-}
-
-.main_search .search_wrap fieldset .search_top .in button {
-    position: absolute;
-    right: 0;
-    width: 90px;
-    height: 100%;
-    color: #fff;
-    background: #2264bb;
-    border: 0;
-    font-size: 20px;
-}
-
-.main_search .search_wrap fieldset .search_top .in button i {
-    vertical-align: middle;
-}
-
-
-.main_search .search_wrap fieldset .search_bottom {}
-
-.main_search .search_wrap fieldset .search_bottom ._select {
-    width: 100%;
-    background: #fff;
-    height: 60px;
-    padding: 10px;
-    border: 1px solid #b1b5b9;
-    border-top: 1px solid black;
-}
-
-.main_search .search_wrap fieldset .search_bottom ._select option {}
-
-
 /*main_product*/
 .main_product {
     background: #f9f9f9;
@@ -447,7 +369,16 @@
     padding: 12px 25px 10px 30px;
     margin: auto 0 0 0;
     align-self: center;
+    border: 1px solid#ddd;
     border-radius: 10px;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.3);
+    transition: 0.5s;
+}
+
+.main_product .content .txt a:hover {
+    border: 1px solid #04BFAD;
+    color: #fff;
     background: #04BFAD;
 }
 
@@ -474,6 +405,87 @@
     background: url(../images/product04.png) no-repeat center center/cover;
     border-radius: 0 20px 20px 0;
 }
+
+/*main_search*/
+
+
+.main_search {
+    padding: 100px 0;
+}
+
+.main_search {}
+
+.main_search .search_wrap .search_tit h2 {
+    margin: 0 0 32px 0;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.main_search .search_wrap fieldset {
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.main_search .search_wrap fieldset .search_top {
+    background: #eff2f7;
+    border: 1px solid #b1b5b9;
+    border-bottom: 1px solid black;
+    padding: 50px 500px;
+    border-radius: 10px 10px 0 0;
+}
+
+.main_search .search_wrap fieldset .search_top .in {
+    position: relative;
+    border-radius: 100px;
+    overflow: hidden;
+    border: 1px solid #b1b5b9;
+}
+
+.main_search .search_wrap fieldset .search_top .in input {
+    padding: 5px 2rem;
+    width: 100%;
+    height: 50px;
+    background: #fff;
+    border: 0;
+    border-radius: 100px;
+}
+
+.main_search .search_wrap fieldset .search_top .in button {
+    position: absolute;
+    right: 0;
+    width: 90px;
+    height: 100%;
+    color: #fff;
+    background: #2264bb;
+    border: 0;
+    font-size: 20px;
+}
+
+.main_search .search_wrap fieldset .search_top .in button i {
+    vertical-align: middle;
+}
+
+
+.main_search .search_wrap fieldset .search_bottom {
+    /* padding: 0 500px; */
+}
+
+.main_search .search_wrap fieldset .search_bottom ._select {
+    width: 100%;
+    background: #fff;
+    height: 60px;
+    padding: 0px 630px;
+    border: 1px solid #b1b5b9;
+    border-top: 1px solid black;
+}
+
+.main_search .search_wrap fieldset .search_bottom ._select option {}
+
+
+
 
 /*main_news*/
 
@@ -812,14 +824,17 @@
     margin: 0 0 20px 0;
 }
 
+
 .mainEvent .event .right .eventContent li figure img {
     width: 100%;
     height: 416px;
-    /* object-fit: cover; */
+    object-fit: cover;
+    object-position: top -60px right 0;
 }
 
 .mainEvent .event .right .eventContent li a {
-    display: inline-block;
+    display: block;
+    text-align: end;
     margin: 0 0 0 auto;
     font-size: 16px;
     font-weight: 500;
@@ -1021,7 +1036,7 @@
 
     .top_bar h1 {
         position: fixed;
-        margin: 0;
+        margin: 0 0 0 15px;
         z-index: 1003;
     }
 
@@ -1099,15 +1114,12 @@
     .header .gnb .menu_box .main_menu {
         position: relative;
         width: 282px;
-        /* padding: 0 60px; */
         font-size: 18px;
         font-weight: 600;
         text-align: start;
         color: #444;
         cursor: pointer;
-
-        line-height: 75px;
-        border-bottom: 1px solid #ddd;
+        line-height: 60px;
     }
 
     .header .gnb .menu_box .main_menu::after {
@@ -1131,25 +1143,10 @@
     }
 
     .header .gnb .menu_box .main_menu a {
-        padding: 0;
+        padding: 5px;
     }
 
     .header .sub {
-        /* position: absolute;
-        width: 100%;
-        height: 0;
-        top: 75px;
-        left: 50%;
-        transform: translate(-50%, 0);
-        text-align: center;
-        line-height: 45px;
-        overflow: hidden;
-        transition: 0.5s;
-        z-index: 999;
-        border-right: 1px solid #ddd; */
-
-        display: none;
-        /**/
         position: static;
         width: 100%;
         height: auto;
@@ -1157,7 +1154,7 @@
         left: 50%;
         transform: translate(0, 0);
         background: #ffffff;
-        text-align: center;
+        text-align: left;
         padding: 0 0;
         border-radius: 5px;
         border: 0;
@@ -1165,7 +1162,6 @@
         visibility: visible;
         transition: none;
         display: none;
-
     }
 
 
@@ -1174,6 +1170,7 @@
         font-weight: 400;
         color: #444;
         transition: 0.3s;
+        border-bottom: 1px solid #ddd;
     }
 
     .header .sub li:hover {
@@ -1278,7 +1275,7 @@
 
     .main_bg .bg_txt_box {
         position: absolute;
-        width: 400px;
+        width: 380px;
         top: 70%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -1439,7 +1436,7 @@
 
 
     .main_search {
-        padding: 100px 0;
+        padding: 0;
     }
 
     .main_search {}
@@ -1515,7 +1512,7 @@
 
     /*main_product*/
     .main_product {
-        background: #f9f9f9;
+        background: #fff;
     }
 
     .main_product .content {
@@ -1590,6 +1587,13 @@
         margin: auto 0 0 0;
         align-self: center;
         border-radius: 10px;
+
+        border-radius: 10px;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.3);
+    }
+
+    .main_product .content .txt a:hover {
         background: #04BFAD;
     }
 
@@ -1663,7 +1667,7 @@
 
     .main_news .news_link a {
         display: block;
-        padding: 15px;
+        padding: 13px;
     }
 
     .main_news .news_content .con {
@@ -1692,14 +1696,13 @@
 
     .main_news .news_content .con .nbox ul>li>a .ntit {
         display: flex;
-        flex-direction: column;
         margin: 0 0 8px 0;
     }
 
     .main_news .news_content .con .nbox ul>li>a .ntit span {
         display: inline-block;
-        padding: 9px 15px 7px 15px;
-        margin: 0 10px 0 0;
+        padding: 5px 12px 4px 12px;
+        margin: 0 10px 5px 0;
         font-size: 14px;
         font-weight: 500;
         color: #fff;
@@ -1708,13 +1711,17 @@
     }
 
     .main_news .news_content .con .nbox ul>li>a .ntit strong {
-        font-size: 22px;
+        font-size: 20px;
         font-weight: 600;
+        word-break: keep-all;
+        line-height: 1.2;
     }
 
     .main_news .news_content .con .nbox ul>li>a .ntit i {
+
         padding: 3px;
         margin: 0 0 0 auto;
+        font-size: 14px;
     }
 
     .main_news .news_content .con .nbox ul>li>a .ntxt {
@@ -1810,8 +1817,9 @@
     .main_issue .issue_box .slide_num {
         position: absolute;
         bottom: 81.2%;
-        left: 85%;
+        left: 90%;
         transform: translate(-50%, -50%);
+        font-size: 15px;
         display: flex;
         color: #fff;
     }
@@ -1914,8 +1922,8 @@
     }
 
     .mainEvent .event .eventMenu li a {
-        font-size: 16px;
-        font-weight: 500;
+        font-size: 14px;
+        font-weight: 400;
         color: #fff;
         line-height: 1.3;
         transition: 0.5s;
@@ -1966,14 +1974,19 @@
         width: 100%;
         height: 280px;
         /* object-fit: cover; */
+        object-position: top -30px right 0;
     }
 
     .mainEvent .event .right .eventContent li a {
-        display: inline-block;
+        display: block;
         margin: 0 0 0 auto;
         font-size: 16px;
         font-weight: 500;
         color: #fff;
+    }
+
+    .mainEvent .event .right .eventContent li a i {
+        font-size: 14px;
     }
 
     /*footer*/
@@ -2135,4 +2148,5 @@
     .to_top i span {
         font-size: 12px;
     }
+
 }
