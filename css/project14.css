@@ -1028,6 +1028,12 @@
 
 @media (max-width: 768px) {
 
+    br {
+        display: inline-block;
+        content: " ";
+        padding: 0 2px;
+    }
+
     /*top_bar*/
     .top_bar {
         border-top: 0px solid #eee;
@@ -1702,7 +1708,7 @@
     .main_news .news_content .con .nbox ul>li>a .ntit span {
         display: inline-block;
         padding: 5px 12px 4px 12px;
-        margin: 0 10px 5px 0;
+        margin: 0 7px 3px 0;
         font-size: 14px;
         font-weight: 500;
         color: #fff;
@@ -1730,6 +1736,7 @@
     }
 
     .main_news .news_content .con .nbox ul>li>a .ntxt p {
+        margin: 0 0 8px 0;
         font-size: 17px;
         font-weight: 300;
         color: #999;
@@ -1804,7 +1811,7 @@
         position: absolute;
         display: flex;
         top: 7%;
-        left: 25px;
+        left: 18px;
         font-size: 32px;
         width: 90%;
         color: #fff;
