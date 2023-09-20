@@ -42,11 +42,11 @@ $(function () {
             .siblings().removeClass('on');
 
 
-        //console.log(event, event.target, event.currentTarget, $(this), $(this).index());
     });
 
 
     $('.issue_slider').slick({
+        autoplay: true,
         fade: true,
         arrows: false,
     });
